@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,13 +8,65 @@
     tools:context="com.yang.thirdapp.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/btn_00"
+            style="@style/home_text_style"
+            android:text="通过ContentProvider获取另一个应用的数据" />
+
+        <TextView
+            android:id="@+id/btn_01"
+            style="@style/home_text_style"
+            android:text="按钮1" />
+
+        <TextView
+            android:id="@+id/btn_02"
+            style="@style/home_text_style"
+            android:text="按钮2" />
+
+        <TextView
+            android:id="@+id/btn_03"
+            style="@style/home_text_style"
+            android:text="按钮3" />
+
+        <TextView
+            android:id="@+id/btn_04"
+            style="@style/home_text_style"
+            android:text="按钮4" />
+
+        <TextView
+            android:id="@+id/btn_05"
+            style="@style/home_text_style"
+            android:text="按钮5" />
+
+        <TextView
+            android:id="@+id/btn_06"
+            style="@style/home_text_style"
+            android:text="按钮6" />
+
+        <TextView
+            android:id="@+id/btn_07"
+            style="@style/home_text_style"
+            android:text="按钮7" />
+
+        <TextView
+            android:id="@+id/btn_08"
+            style="@style/home_text_style"
+            android:text="按钮8" />
+
+        <TextView
+            android:id="@+id/btn_09"
+            style="@style/home_text_style"
+            android:text="按钮9" />
+
+        <TextView
+            android:id="@+id/btn_10"
+            style="@style/home_text_style"
+            android:text="按钮10" />
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
