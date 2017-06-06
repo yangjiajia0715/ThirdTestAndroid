@@ -3,6 +3,7 @@
     package="com.yang.thirdapp">
 
     <uses-permission android:name="com.testandroid.yang.provider.pppp" />
+    <uses-permission android:name="com.testandroid.yang.provider.READ_USER" />
 
     <application
         android:allowBackup="true"

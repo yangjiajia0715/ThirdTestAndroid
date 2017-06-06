@@ -1,5 +1,6 @@
 package com.yang.thirdapp;
 
+import android.content.ContentUris;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -143,6 +144,7 @@ public class MainActivity extends AppCompatActivity
                 try {
 //                    Uri uri = UserContract.CONTENT_URI;
                     Uri uri = UserContract.Users.CONTENT_URI;
+                    uri = ContentUris.withAppendedId(uri, 2);
                     cursor = getContentResolver().query(uri, null, null, null, null);
                     Log.d(TAG, "onViewClicked: cursor=" + cursor);
                     if (cursor != null && cursor.getCount() > 0) {
