@@ -46,6 +46,10 @@ public class SelectFileActivity extends ListActivity {
         list.add("跳转分享文件");
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
         listView.setAdapter(adapter);
+
+//        Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        takePhotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(cameraPhoto));
+//        startActivityForResult(takePhotoIntent, REQUEST_TAKE_PHOTO);
     }
 
     @Override
@@ -57,15 +61,14 @@ public class SelectFileActivity extends ListActivity {
 //                String uriStr = sp.getString("uri", "");
 //                Log.d(TAG, "onListItemClick: uriStr=" + uriStr);
 //                if (TextUtils.isEmpty(uriStr)) {
-                Intent intent = new Intent(Intent.ACTION_PICK);
-                intent.setType("image/*");
-                startActivityForResult(intent, 0);
-//                } else {
+                    Intent intent = new Intent(Intent.ACTION_PICK);
+                    intent.setType("image/*");
+                    startActivityForResult(intent, 0);
+//                } else {//测试撤销 管用  revokeUriPermission();
 //                    Uri uri = Uri.parse(uriStr);
 //                    Cursor cursor = getContentResolver().query(uri, null, null, null, null);
 //                    Log.d(TAG, "onListItemClick: cursor=" + cursor);
 //                }
-
                 break;
 
         }
@@ -99,15 +102,13 @@ public class SelectFileActivity extends ListActivity {
                         long cursorLong = cursor.getLong(sizeIndex);
                         String string = cursor.getString(nameIndex);
 
-                        String size = Long.toString(cursorLong);
-                        Log.d(TAG, "onActivityResult: name=" + string);
-                        Log.d(TAG, "onActivityResult: size=" + size);
                         Log.d(TAG, "onActivityResult: formatFileSize=" + Formatter.formatFileSize(this, cursorLong));
 
                         list.add("选择的文件名=" + string + " Size=" + Formatter.formatShortFileSize(this, cursorLong));
                     }
                     adapter.notifyDataSetChanged();
                 }
+
                 if (cursor != null) {
                     cursor.close();
                 }
