@@ -21,7 +21,7 @@
         <TextView
             android:id="@+id/btn_01"
             style="@style/home_text_style"
-            android:text="按钮1" />
+            android:text="SelectFileActivity" />
 
         <TextView
             android:id="@+id/btn_02"

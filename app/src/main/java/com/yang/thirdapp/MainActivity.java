@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d(TAG, getClass().getSimpleName() + "onCreate: getTaskId ="+ getTaskId());
         ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -136,7 +137,8 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @OnClick({R.id.btn_00, R.id.btn_01, R.id.btn_02, R.id.btn_03, R.id.btn_04, R.id.btn_05, R.id.btn_06, R.id.btn_07, R.id.btn_08, R.id.btn_09, R.id.btn_10})
+    @OnClick({R.id.btn_00, R.id.btn_01, R.id.btn_02, R.id.btn_03, R.id.btn_04, R.id.btn_05,
+            R.id.btn_06, R.id.btn_07, R.id.btn_08, R.id.btn_09, R.id.btn_10})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_00:
@@ -163,6 +165,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 break;
             case R.id.btn_01:
+                SelectFileActivity.start(this);
                 break;
             case R.id.btn_02:
                 break;
